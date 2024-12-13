@@ -7816,7 +7816,7 @@ function Folding() {
 
     this.foldAll = function(startRow, endRow, depth) {
         if (depth == undefined)
-            depth = 100000; // JSON.stringify doesn't hanle Infinity
+            depth = 100000; // JSON.stringify doesn't handle Infinity
         var foldWidgets = this.foldWidgets;
         if (!foldWidgets)
             return; // mode doesn't support folding
@@ -13319,7 +13319,7 @@ var Gutter = function(parentEl) {
     this.update = function(config) {
         var session = this.session;
         var firstRow = config.firstRow;
-        var lastRow = Math.min(config.lastRow + config.gutterOffset,  // needed to compensate for hor scollbar
+        var lastRow = Math.min(config.lastRow + config.gutterOffset,  // needed to compensate for hor scrollbar
             session.getLength() - 1);
         var fold = session.getNextFoldLine(firstRow);
         var foldStart = fold ? fold.start.row : Infinity;

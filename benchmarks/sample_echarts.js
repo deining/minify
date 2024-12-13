@@ -7314,7 +7314,7 @@
      *     This mode try to support that reproduce an echarts instance from another
      *     echarts instance (via `getOption`) in some simple cases.
      *     In this senario, the `result` index are exactly the consistent with the `newCmptOptions`,
-     *     which ensures the compoennt index referring (like `xAxisIndex: ?`) corrent. That is,
+     *     which ensures the component index referring (like `xAxisIndex: ?`) corrent. That is,
      *     the "hole" in `newCmptOptions` will also be kept.
      *     On the contrary, other modes try best to eliminate holes.
      *     PENDING: This is an experimental mode yet.
@@ -7486,7 +7486,7 @@
     function mappingInReplaceAllMode(result, newCmptOptions) {
       each(newCmptOptions, function (cmptOption) {
         // The feature "reproduce" requires "hole" will also reproduced
-        // in case that compoennt index referring are broken.
+        // in case that component index referring are broken.
         result.push({
           newOption: cmptOption,
           brandNew: true,
@@ -7537,7 +7537,7 @@
         // instance will be recreated, which can be accepted.
 
 
-        keyInfo.name = opt.name != null ? makeComparableKey(opt.name) : existing ? existing.name // Avoid diffferent series has the same name,
+        keyInfo.name = opt.name != null ? makeComparableKey(opt.name) : existing ? existing.name // Avoid different series has the same name,
         // because name may be used like in color pallet.
         : DUMMY_COMPONENT_NAME_PREFIX + index;
 
@@ -7787,7 +7787,7 @@
       var others = {};
       var mainTypeSpecified = false;
       each(finder, function (value, key) {
-        // Exclude 'dataIndex' and other illgal keys.
+        // Exclude 'dataIndex' and other illegal keys.
         if (key === 'dataIndex' || key === 'dataIndexInside') {
           others[key] = value;
           return;
@@ -8129,7 +8129,7 @@
       var storage = {};
 
       target.registerClass = function (clz) {
-        // `type` should not be a "instance memeber".
+        // `type` should not be a "instance member".
         // If using TS class, should better declared as `static type = 'series.pie'`.
         // otherwise users have to mount `type` on prototype manually.
         // For backward compat and enable instance visit type via `this.type`,
@@ -12666,7 +12666,7 @@
     /**
      * Support hightlight/downplay record on each elements.
      * For the case: hover highlight/downplay (legend, visualMap, ...) and
-     * user triggerred hightlight/downplay should not conflict.
+     * user triggered hightlight/downplay should not conflict.
      * Only all of the highlightDigit cleared, return to normal.
      * @param {string} highlightKey
      * @return {number} highlightDigit
@@ -14781,7 +14781,7 @@
           formatterParams: formatterParams
         }, itemTooltipOptionObj)
       };
-    } // Register built-in shapes. These shapes might be overwirtten
+    } // Register built-in shapes. These shapes might be overwritten
     // by users, although we do not recommend that.
 
     registerShape('circle', Circle);
@@ -16471,7 +16471,7 @@
      */
 
     function makeValueReadable(value, valueType, useUTC) {
-      var USER_READABLE_DEFUALT_TIME_PATTERN = '{yyyy}-{MM}-{dd} {hh}:{mm}:{ss}';
+      var USER_READABLE_DEFAULT_TIME_PATTERN = '{yyyy}-{MM}-{dd} {hh}:{mm}:{ss}';
 
       function stringToUserReadable(str) {
         return str && trim(str) ? str : '-';
@@ -16488,7 +16488,7 @@
         var date = isTypeTime ? parseDate(value) : value;
 
         if (!isNaN(+date)) {
-          return format(date, USER_READABLE_DEFUALT_TIME_PATTERN, useUTC);
+          return format(date, USER_READABLE_DEFAULT_TIME_PATTERN, useUTC);
         } else if (isValueDate) {
           return '-';
         } // In other cases, continue to try to display the value in the following code.
@@ -17670,7 +17670,7 @@
      */
 
     function queryDatasetUpstreamDatasetModels(datasetModel) {
-      // Only these attributes declared, we by defualt reference to `datasetIndex: 0`.
+      // Only these attributes declared, we by default reference to `datasetIndex: 0`.
       // Otherwise, no reference.
       if (!datasetModel.get('transform', true) && !datasetModel.get('fromTransformResult', true)) {
         return [];
@@ -18169,7 +18169,7 @@
                     if (seriesImportName) {
                       error("Series " + subType + " is used but not imported.\nimport { " + seriesImportName + " } from 'echarts/charts';\necharts.use([" + seriesImportName + "]);");
                     } else {
-                      error("Unkown series " + subType);
+                      error("Unknown series " + subType);
                     }
                   }
                 }
@@ -18806,7 +18806,7 @@
           // );
           // For simplicity, timeline options and media options do not support merge,
           // that is, if you `setOption` twice and both has timeline options, the latter
-          // timeline opitons will not be merged to the formers, but just substitude them.
+          // timeline options will not be merged to the formers, but just substitude them.
           if (newParsedOption.timelineOptions.length) {
             optionBackup.timelineOptions = newParsedOption.timelineOptions;
           }
@@ -19971,7 +19971,7 @@
       }
     } // Consider dimensions defined like ['A', 'price', 'B', 'price', 'C', 'price'],
     // which is reasonable. But dimension name is duplicated.
-    // Returns undefined or an array contains only object without null/undefiend or string.
+    // Returns undefined or an array contains only object without null/undefined or string.
 
 
     function normalizeDimensionsOption(dimensionsDefine) {
@@ -19991,7 +19991,7 @@
           displayName: rawItem.displayName,
           type: rawItem.type
         }; // User can set null in dimensions.
-        // We dont auto specify name, othewise a given name may
+        // We dont auto specify name, otherwise a given name may
         // cause it be refered unexpectedly.
 
         if (item.name == null) {
@@ -20298,7 +20298,7 @@
       var method = rawSourceItemGetterMap[getMethodMapKey(sourceFormat, seriesLayoutBy)];
 
       if ("development" !== 'production') {
-        assert(method, 'Do not suppport get item on "' + sourceFormat + '", "' + seriesLayoutBy + '".');
+        assert(method, 'Do not support get item on "' + sourceFormat + '", "' + seriesLayoutBy + '".');
       }
 
       return method;
@@ -20329,7 +20329,7 @@
       var method = rawSourceDataCounterMap[getMethodMapKey(sourceFormat, seriesLayoutBy)];
 
       if ("development" !== 'production') {
-        assert(method, 'Do not suppport count on "' + sourceFormat + '", "' + seriesLayoutBy + '".');
+        assert(method, 'Do not support count on "' + sourceFormat + '", "' + seriesLayoutBy + '".');
       }
 
       return method;
@@ -20351,7 +20351,7 @@
       var method = rawSourceValueGetterMap[sourceFormat];
 
       if ("development" !== 'production') {
-        assert(method, 'Do not suppport get value on "' + sourceFormat + '".');
+        assert(method, 'Do not support get value on "' + sourceFormat + '".');
       }
 
       return method;
@@ -20783,7 +20783,7 @@
       };
 
       Task.prototype.setOutputEnd = function (end) {
-        // This only happend in dataTask, dataZoom, map, currently.
+        // This only happened in dataTask, dataZoom, map, currently.
         // where dataZoom do not set end each time, but only set
         // when reset. So we should record the setted end, in case
         // that the stub of dataZoom perform again and earse the
@@ -20945,7 +20945,7 @@
     }
     var valueParserMap = createHashMap({
       'number': function (val) {
-        // Do not use `numericToNumber` here. We have by defualt `numericToNumber`.
+        // Do not use `numericToNumber` here. We have by default `numericToNumber`.
         // Here the number parser can have loose rule:
         // enable to cut suffix: "120px" => 120, "14%" => 14.
         return parseFloat(val);
@@ -21007,8 +21007,8 @@
     /** @class */
     function () {
       /**
-       * @param order by defualt: 'asc'
-       * @param incomparable by defualt: Always on the tail.
+       * @param order by default: 'asc'
+       * @param incomparable by default: Always on the tail.
        *        That is, if 'asc' => 'max', if 'desc' => 'min'
        *        See the definition of "incomparable" in [SORT_COMPARISON_RULE]
        */
@@ -21871,7 +21871,7 @@
         }
       };
       /**
-       * @param sourceIndex By defualt 0, means "main source".
+       * @param sourceIndex By default 0, means "main source".
        *                    Most cases there is only one source.
        */
 
@@ -22507,7 +22507,7 @@
       };
       /**
        * Init a data structure from data related option in series
-       * Must be overriden.
+       * Must be overridden.
        */
 
 
@@ -23314,7 +23314,7 @@
       var styleMapper = seriesModel.visualStyleMapper || defaultStyleMappers[stylePath];
 
       if (!styleMapper) {
-        console.warn("Unkown style type '" + stylePath + "'.");
+        console.warn("Unknown style type '" + stylePath + "'.");
         return defaultStyleMappers.itemStyle;
       }
 
@@ -23326,7 +23326,7 @@
       var colorKey = seriesModel.visualDrawType || defaultColorKey[stylePath];
 
       if (!colorKey) {
-        console.warn("Unkown style type '" + stylePath + "'.");
+        console.warn("Unknown style type '" + stylePath + "'.");
         return 'fill';
       }
 
@@ -24960,7 +24960,7 @@
       }
 
       return minDist;
-    } // Temporal varible for intermediate usage.
+    } // Temporal variable for intermediate usage.
 
 
     var pt0 = new Point();
@@ -29275,7 +29275,7 @@
     // So data stack stage should be in front of data processing stage.
 
     var PRIORITY_PROCESSOR_DATASTACK = 900; // "Data filter" will block the stream, so it should be
-    // put at the begining of data processing.
+    // put at the beginning of data processing.
 
     var PRIORITY_PROCESSOR_FILTER = 1000;
     var PRIORITY_PROCESSOR_DEFAULT = 2000;
@@ -31307,7 +31307,7 @@
 
       this.on.call(this, eventName, wrapped, ctx);
     }; // /**
-    //  * Encode visual infomation from data after data processing
+    //  * Encode visual information from data after data processing
     //  *
     //  * @param {module:echarts/model/Global} ecModel
     //  * @param {object} layout
@@ -33965,7 +33965,7 @@
             // stroage may be empty when no data, so use
             // dimensionInfos to check.
             if (!list._dimensionInfos[dims[i]]) {
-              console.error('Unkown dimension ' + dims[i]);
+              console.error('Unknown dimension ' + dims[i]);
             }
           }
         }; // Data in excludeDimensions is copied, otherwise transfered.
@@ -34289,7 +34289,7 @@
     // But
     // (1) custom series should be considered. where other dims
     // may be visited.
-    // (2) sometimes user need to calcualte bubble size or use visualMap
+    // (2) sometimes user need to calculate bubble size or use visualMap
     // on other dimensions besides coordSys needed.
     // So, dims that is not used by system, should be shared in storage?
 
@@ -35104,10 +35104,10 @@
       OrdinalScale.prototype.getLabel = function (tick) {
         if (!this.isBlank()) {
           var ordinalNumber = this.getRawOrdinalNumber(tick.value);
-          var cateogry = this._ordinalMeta.categories[ordinalNumber]; // Note that if no data, ordinalMeta.categories is an empty array.
+          var category = this._ordinalMeta.categories[ordinalNumber]; // Note that if no data, ordinalMeta.categories is an empty array.
           // Return empty if it's not exist.
 
-          return cateogry == null ? '' : cateogry + '';
+          return category == null ? '' : category + '';
         }
       };
 
@@ -36802,7 +36802,7 @@
      * (3) `coordSys.update` use it to finally decide the scale extent.
      * But the callback of `min`/`max` should not be called multiple times.
      * The code below should not be implemented repeatedly either.
-     * So we cache the result in the scale instance, which will be recreated at the begining
+     * So we cache the result in the scale instance, which will be recreated at the beginning
      * of the workflow (because `scale` instance will be recreated each round of the workflow).
      */
 
@@ -37879,7 +37879,7 @@
       /**
        * Only be called in category axis.
        * Can be overrided, consider other axes like in 3D.
-       * @return Auto interval for cateogry axis tick and label
+       * @return Auto interval for category axis tick and label
        */
 
 
@@ -40127,7 +40127,7 @@
                     layer = this.getLayer(zlevel + (incrementalLayerCount > 0 ? EL_AFTER_INCREMENTAL_INC : 0), this._needsManuallyCompositing);
                 }
                 if (!layer.__builtin__) {
-                    logError('ZLevel ' + zlevel + ' has been used by unkown layer ' + layer.id);
+                    logError('ZLevel ' + zlevel + ' has been used by unknown layer ' + layer.id);
                 }
                 if (layer !== prevLayer) {
                     layer.__used = true;
@@ -42279,7 +42279,7 @@
             getSymbolPoint: function (idx) {
               return [points[idx * 2], points[idx * 2 + 1]];
             }
-          }); // In the case data zoom triggerred refreshing frequently
+          }); // In the case data zoom triggered refreshing frequently
           // Data may not change if line has a category axis. So it should animate nothing
 
           if (!isPointsSame(this._stackedOnPoints, stackedOnPoints) || !isPointsSame(this._points, points)) {
@@ -43770,7 +43770,7 @@
         var xClipped = x2 < x;
         var yClipped = y2 < y; // When xClipped or yClipped, the element will be marked as `ignore`.
         // But we should also place the element at the edge of the coord sys bounding rect.
-        // Beause if data changed and the bar show again, its transition animaiton
+        // Because if data changed and the bar show again, its transition animaiton
         // will begin at this place.
 
         layout.x = xClipped && x > coordSysX2 ? x2 : x;
@@ -45957,11 +45957,11 @@
       // min/max: [30, datamin, 60] or [20, datamin] or [datamin, 60]
       splitNumber: 5,
       minorTick: {
-        // Minor tick, not available for cateogry axis.
+        // Minor tick, not available for category axis.
         show: false,
         // Split number of minor ticks. The value should be in range of (0, 100)
         splitNumber: 5,
-        // Lenght of minor tick
+        // Length of minor tick
         length: 3,
         // Line style
         lineStyle: {// Default to be same with axisTick
@@ -46976,7 +46976,7 @@
           handleAutoShown: function () {
             return true;
           }
-        }); // FIXME Not use a seperate text group?
+        }); // FIXME Not use a separate text group?
 
         var transformGroup = new Group({
           x: opt.position[0],
@@ -50273,7 +50273,7 @@
             // FIXME
             // If this is not the `mainSeries`, the item model (like label formatter)
             // set on original data item will never get. But it has been working
-            // like that from the begining, and this scenario is rarely encountered.
+            // like that from the beginning, and this scenario is rarely encountered.
             // So it won't be fixed until have to.
 
             setLabelStyle(circle, getLabelStatesModels(itemModel), {
@@ -50806,7 +50806,7 @@
         var rawTransformable = this._rawTransformable;
         var roamTransformable = this._roamTransformable; // Becuase roamTransformabel has `originX/originY` modified,
         // but the caller of `getTransformInfo` can not handle `originX/originY`,
-        // so need to recalcualte them.
+        // so need to recalculate them.
 
         var dummyTransformable = new Transformable();
         dummyTransformable.transform = roamTransformable.transform;
@@ -50994,7 +50994,7 @@
 
 
       Geo.prototype.getGeoCoord = function (name) {
-        var region = this._regionsMap.get(name); // calcualte center only on demand.
+        var region = this._regionsMap.get(name); // calculate center only on demand.
 
 
         return this._nameCoordMap.get(name) || region && region.getCenter();
@@ -66351,7 +66351,7 @@
           var CoordSys = CoordinateSystemManager.get(option.coordinateSystem);
 
           if (!CoordSys) {
-            throw new Error('Unkown coordinate system ' + option.coordinateSystem);
+            throw new Error('Unknown coordinate system ' + option.coordinateSystem);
           }
         }
 
@@ -68800,7 +68800,7 @@
           rotate: 'radial',
           show: true,
           opacity: 1,
-          // 'left' is for inner side of inside, and 'right' is for outter
+          // 'left' is for inner side of inside, and 'right' is for outer
           // side for inside
           align: 'center',
           position: 'inside',
@@ -71020,7 +71020,7 @@
      * two path elements that have different hierarchy, before we retrieve the "from" props,
      * we have to calculate the local transition of the "oldPath" based on the parent of
      * the "newPath".
-     * At present, the case only happend in "morphing". Without morphing, the transform
+     * At present, the case only happened in "morphing". Without morphing, the transform
      * transition are all between elements in the same hierarchy, where this kind of process
      * is not needed.
      *
@@ -73878,7 +73878,7 @@
        * Angle axis uses text height to decide interval
        *
        * @override
-       * @return {number} Auto interval for cateogry axis tick and label
+       * @return {number} Auto interval for category axis tick and label
        */
 
 
@@ -86520,7 +86520,7 @@
         result.contentPosition[orientIdx] = -targetItemInfo.s; // Strategy:
         // (1) Always align based on the left/top most item.
         // (2) It is user-friendly that the last item shown in the
-        // current window is shown at the begining of next window.
+        // current window is shown at the beginning of next window.
         // Otherwise if half of the last item is cut by the window,
         // it will have no chance to display entirely.
         // (3) Consider that item size probably be different, we

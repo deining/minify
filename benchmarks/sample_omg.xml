@@ -5510,7 +5510,7 @@ It indicates if the trigger activity is run before or after the statement or row
           name = 'DeferrabilityType' 
           isRoot = 'true' isLeaf = 'true' isAbstract = 'false' visibility = 'public_vis' >
           <Model:ModelElement.annotation>Used in Foreign Keys
-Indicates if the Foreign Key validation should be deferred to the end of the transaction or executed immadiately at the end of the statement.
+Indicates if the Foreign Key validation should be deferred to the end of the transaction or executed immediately at the end of the statement.
 This is the value used at the beginning of a transaction. It can be changed within a transaction.</Model:ModelElement.annotation>
           <Model:DataType.typeCode>
             <XMI.CorbaTypeCode>
@@ -10596,7 +10596,7 @@ The ordering of the DimensionDeployment classes may optionally be assigned an im
 </Model:Package>
 <!-- ==================== MiningCore    [Package] ==================== -->
 <Model:Package xmi.id = 'a39E71F94024D' 
-  name = 'MiningCore' annotation = 'This package contains the basic packages that are required to implement a CWM DataMining interface. It is required that  at least this package and one more packge be implemented for compliance.' 
+  name = 'MiningCore' annotation = 'This package contains the basic packages that are required to implement a CWM DataMining interface. It is required that  at least this package and one more package be implemented for compliance.' 
   isRoot = 'false' isLeaf = 'false' isAbstract = 'false' visibility = 'public_vis' >
   <Model:Namespace.contents>
     <!-- ==================== MiningCore.org.omg.mof.idl_substitute_name=MiningCoreModule    [Tag] ==================== -->
@@ -14052,7 +14052,7 @@ It contains a set of attributes (represented as ApplyOutputItem objects) holding
     <Model:DataType xmi.id = 'a38FB583A0260' 
       name = 'AggregationFunction' 
       isRoot = 'true' isLeaf = 'true' isAbstract = 'false' visibility = 'public_vis' >
-      <Model:ModelElement.annotation>Per ClusteringModel, there is one aggregation function: depending on the attribute type. The aggregated value is optimal if it is 0 (for distance measure) or greater values indicate optimal fit (for simiarity measure).
+      <Model:ModelElement.annotation>Per ClusteringModel, there is one aggregation function: depending on the attribute type. The aggregated value is optimal if it is 0 (for distance measure) or greater values indicate optimal fit (for similarity measure).
 In the definition of functions, Wi is the field weight in the attribute, and Xi and Yi are values.</Model:ModelElement.annotation>
       <Model:DataType.typeCode>
         <XMI.CorbaTypeCode>
@@ -14752,7 +14752,7 @@ Each field has a comparison function, this is either defined as a default in Clu
       supertypes = 'a39C62D090070' >
       <Model:ModelElement.annotation>As a subclass of AttributeUsage, CategoricalAttributeUsage provides additional specification for categorical attributes only, in particular, a set of the positive categories. 
 
-Positive categories are provided here since different models may choose different postive categories, hence it is not a characteristic of the data.</Model:ModelElement.annotation>
+Positive categories are provided here since different models may choose different positive categories, hence it is not a characteristic of the data.</Model:ModelElement.annotation>
       <Model:Namespace.contents>
         <!-- ==================== Classification.ClassificationAttributeUsage.positiveCategory    [Reference] ==================== -->
         <Model:Reference xmi.id = 'a3B33A9A2028D' 

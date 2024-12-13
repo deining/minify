@@ -1034,7 +1034,7 @@ var mouse = $.widget("ui.mouse", {
 		return this.mouseDelayMet;
 	},
 
-	// These are placeholder methods, to be overriden by extending plugin
+	// These are placeholder methods, to be overridden by extending plugin
 	_mouseStart: function(/* event */) {},
 	_mouseDrag: function(/* event */) {},
 	_mouseStop: function(/* event */) {},
@@ -2403,7 +2403,7 @@ $.ui.plugin.add( "draggable", "connectToSortable", {
 					sortable._trigger( "out", event, sortable._uiHash( sortable ) );
 					sortable._mouseStop( event, true );
 
-					// restore sortable behaviors that were modfied
+					// restore sortable behaviors that were modified
 					// when the draggable entered the sortable area (#9481)
 					sortable.options.revert = sortable.options._revert;
 					sortable.options.helper = sortable.options._helper;
@@ -8813,7 +8813,7 @@ $.extend(Datepicker.prototype, {
 			inst.input.focus();
 		}
 
-		// deffered render of the years select (to avoid flashes on Firefox)
+		// deferred render of the years select (to avoid flashes on Firefox)
 		if( inst.yearshtml ){
 			origyearshtml = inst.yearshtml;
 			setTimeout(function(){
@@ -11209,7 +11209,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 				focus: function( event, ui ) {
 					var item = ui.item.data( "ui-selectmenu-item" );
 
-					// Prevent inital focus from firing and check if its a newly focused item
+					// Prevent initial focus from firing and check if its a newly focused item
 					if ( that.focusIndex != null && item.index !== that.focusIndex ) {
 						that._trigger( "focus", event, { item: item } );
 						if ( !that.isOpen ) {
@@ -13442,7 +13442,7 @@ var tabs = $.widget( "ui.tabs", {
 		if ( tab.hasClass( "ui-state-disabled" ) ||
 				// tab is already loading
 				tab.hasClass( "ui-tabs-loading" ) ||
-				// can't switch durning an animation
+				// can't switch during an animation
 				this.running ||
 				// click on active header, but not collapsible
 				( clickedIsActive && !options.collapsible ) ||
